@@ -10,10 +10,14 @@
 #   - Label for the y axis (set a default of "Y Title")
 library(ggplot2)
 
-BuildScatter <- function(data, xVar, yVar, colorVar, title = "Title", xLab = "X Title", yLab = "Y Title") {
+BuildScatter <- function(data, 
+                         xVar, yVar, colorVar, 
+                         title = "Title", 
+                         xLab = "X Title", 
+                         yLab = "Y Title") {
   plot <- ggplot(data = data) +
-    geom_point(mapping = aes(x = data[,xVar], y = data[,yVar], color = data[,colorVar])) +
-    labs(title = title, x = xLab, y = yLab)
-  
+    geom_point(mapping = aes(x = data[, xVar], y = data[, yVar], color = data [, colorVar])) +
+    labs(title = title, x = xLab, y = yLab, color = colorVar)
   return(plot)
-}
+  
+} 
