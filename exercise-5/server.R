@@ -43,7 +43,7 @@ shinyServer(function(input, output) {
     #x will be defined by education, y by agree/disagree
     #Bonus: Factor the color field by sex 
     #(this will allow you to visually see the difference between Men and Women when Both are selected)
-    ggplot(plot.data, aes(x = education, y = thoughts, color = factor(color))) +
+    ggplot(plot.data, aes(x = education, y = thoughts, color = factor(sex))) +
       geom_point()
   })
   
